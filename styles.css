@@ -387,7 +387,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1.5rem;
-    background-color: white;
+    background-color: #151515;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -453,7 +453,7 @@ body {
 }
 
 .language-item {
-    background: white;
+    background: #151515;
     padding: 1rem 2rem;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -550,4 +550,5 @@ body {
 
 .animate {
     animation: fadeInUp 0.6s ease forwards;
+
 }
