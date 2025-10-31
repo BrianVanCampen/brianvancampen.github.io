@@ -1,0 +1,553 @@
+/* Modern portfolio styles */
+:root {
+    --vscode-bg: #1e1e1e;
+    --vscode-darker: #151515;
+    --vscode-lighter: #252526;
+    --vscode-blue: #007acc;
+    --vscode-light-blue: #0098fa;
+    --vscode-orange: #ce9178;
+    --vscode-green: #4ec9b0;
+    --vscode-yellow: #dcdcaa;
+    --vscode-text: #d4d4d4;
+    --vscode-comment: #6a9955;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    line-height: 1.6;
+    color: var(--vscode-text);
+    background-color: var(--vscode-bg);
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: var(--vscode-darker);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--vscode-light-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--vscode-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    color: var(--vscode-light-blue);
+    opacity: 1;
+}
+
+/* Hero Section */
+.hero-wrapper {
+    width: 100%;
+    position: relative;
+    background: var(--vscode-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 2rem;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.code-editor {
+    background: var(--vscode-darker);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.editor-header {
+    background: var(--vscode-lighter);
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    background: var(--vscode-darker);
+    color: var(--vscode-text);
+    font-size: 0.9rem;
+    border-radius: 4px 4px 0 0;
+    opacity: 0.6;
+}
+
+.tab.active {
+    background: var(--vscode-bg);
+    opacity: 1;
+}
+
+.editor-content {
+    display: flex;
+    padding: 1rem 0;
+}
+
+.line-numbers {
+    padding: 0 1rem;
+    color: #6e7681;
+    text-align: right;
+    user-select: none;
+}
+
+.line-numbers span {
+    display: block;
+    line-height: 1.5;
+}
+
+.code-content {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.code-content pre {
+    margin: 0;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    line-height: 1.5;
+}
+
+.keyword { color: var(--vscode-blue); }
+.interface { color: var(--vscode-green); }
+.string { color: var(--vscode-orange); }
+.function { color: var(--vscode-yellow); }
+.method { color: var(--vscode-light-blue); }
+.comment { color: var(--vscode-comment); }
+
+.terminal {
+    background: var(--vscode-darker);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+    background: var(--vscode-lighter);
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-title {
+    color: var(--vscode-text);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.terminal-content {
+    padding: 1rem;
+    font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+.prompt {
+    color: var(--vscode-green);
+}
+
+.command {
+    color: var(--vscode-text);
+}
+
+.output {
+    color: var(--vscode-text);
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    width: 100%;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    width: 100%;
+    animation: fadeInUp 0.6s ease forwards 0.2s;
+    opacity: 0;
+}
+
+#heroCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    filter: blur(4px);
+    opacity: 0.8;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* CV Section */
+.cv-container {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cv-container h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.cv-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.view-cv {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.download-cv {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.cv-button:hover {
+    transform: translateY(-2px);
+}
+
+.cv-preview {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--vscode-darker);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-content {
+    padding: 1.5rem;
+    color: var(--vscode-text);
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.skill-item {
+    padding: 1rem;
+    background: var(--vscode-darker);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-item i {
+    font-size: 2.5rem;
+    color: var(--vscode-light-blue);
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-details {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--vscode-text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--vscode-darker);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    color: var(--vscode-text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--vscode-blue);
+}
+
+.languages {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.language-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.language-item {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.language-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.language-level {
+    color: var(--text-color);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--secondary-color);
+}
+
+.project-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.project-content ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-content ul li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Buttons */
+.btn, .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--vscode-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover, .cta-button:hover {
+    background: var(--vscode-light-blue);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--vscode-darker);
+    color: var(--vscode-text);
+}
+
+.btn-secondary:hover {
+    background: var(--vscode-lighter);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeInUp 0.6s ease forwards;
+}

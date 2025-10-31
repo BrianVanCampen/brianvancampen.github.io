@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Van Campen - IoT Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">BVC</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <section id="home" class="hero">
+            <div class="code-editor">
+                <div class="editor-header">
+                    <div class="tabs">
+                        <div class="tab active">profile.ts</div>
+                        <div class="tab">projects.ts</div>
+                        <div class="tab">contact.ts</div>
+                    </div>
+                </div>
+                <div class="editor-content">
+                    <div class="line-numbers">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                    </div>
+                    <div class="code-content">
+                        <pre><span class="keyword">class</span> <span class="interface">IoTDevice</span> {
+    <span class="keyword">constructor</span>() {
+        <span class="keyword">this</span>.sensors = [<span class="string">"Temperature"</span>, <span class="string">"Humidity"</span>, <span class="string">"Motion"</span>];
+        <span class="keyword">this</span>.microcontroller = <span class="string">"ESP32"</span>;
+        <span class="keyword">this</span>.protocols = [<span class="string">"MQTT"</span>, <span class="string">"I2C"</span>, <span class="string">"SPI"</span>];
+    }
+}
+
+<span class="keyword">const</span> <span class="function">developer</span> = {
+    name: <span class="string">"Brian Van Campen"</span>,
+    focus: <span class="string">"IoT & Electronics"</span>,
+    expertise: [<span class="string">"Hardware Design"</span>, <span class="string">"Embedded Systems"</span>, 
+               <span class="string">"Sensor Integration"</span>, <span class="string">"Network Protocols"</span>],
+    <span class="method">connect</span>: () => <span class="method">initiateProject</span>()
+};
+
+<span class="comment">// Building the future of connected devices 🌐</span></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-title">Terminal</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="command-line">
+                        <span class="prompt">$ </span>
+                        <span class="command">profile.explore()</span>
+                    </div>
+                    <div class="output">
+                        <p>👋 Hi, I'm Brian Van Campen</p>
+                        <p>🎓 Currently studying IoT and exploring the endless possibilities of connected devices</p>
+                        <p>💻 Passionate about creating innovative solutions through code</p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn">View Projects</a>
+                            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I'm a driven and enthusiastic student with a passion for technology and a strong foundation in mathematics and computer science. Currently pursuing a Graduaat in Internet of Things at AP Hogeschool, I specialize in electronics and ICT. I'm actively seeking opportunities to apply my expertise in microcontroller programming and embedded systems for IoT devices.</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:vancampenbrian@gmail.com">vancampenbrian@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:0484480921">0484480921</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/brianvancampen/" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="cv-container">
+                <h3>My CV</h3>
+                <div class="cv-buttons">
+                    <a href="assets/cv.pdf" class="cv-button view-cv" target="_blank">
+                        <i class="fas fa-eye"></i> View CV
+                    </a>
+                    <a href="assets/cv.pdf" class="cv-button download-cv" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="cv-preview">
+                    <embed src="assets/cv.pdf" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Experience Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects & Experience</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <i class="fas fa-laptop-code"></i>
+                <!-- <img src="https://via.placeholder.com/400x300" alt="Robot Project" class="project-image"> -->
+                <div class="project-content">
+                    <h3>Robot Car Project</h3>
+                    <p>Designed and implemented a robot car system featuring:</p>
+                    <ul>
+                        <li>ESP32-based control PCB</li>
+                        <li>ATMega-powered tracker module with sensors</li>
+                        <li>Node-RED web interface integration</li>
+                    </ul>
+                    <a href="https://github.com/BrianVanCampen/SmartSystems" class="project-link" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-laptop-code"></i>
+                <!-- <img src="https://via.placeholder.com/400x300" alt="IT Coordinator" class="project-image"> -->
+                <div class="project-content">
+                    <h3>IT Coordinator Internship</h3>
+                    <p>Don Bosco Hoboken (March 2020)</p>
+                    <ul>
+                        <li>Hardware & software installation</li>
+                        <li>Network configuration</li>
+                        <li>System maintenance</li>
+                        <li>Technical support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-laptop-code"></i>
+                <!-- <img src="https://via.placeholder.com/400x300" alt="Education" class="project-image"> -->
+                <div class="project-content">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>AP Hogeschool - Graduaat Internet of Things (2024-Present)</li>
+                        <li>AP Hogeschool - Electronics-ICT (2021-2024)</li>
+                        <li>Stedelijk Lyceum Expo - Mathematics & Computer Science (2018-2019)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <h3>Programming</h3>
+                <p>Python, Arduino (C++), HTML/CSS/JS</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Development</h3>
+                <p>SQL, Docker, Network Integration</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data</h3>
+                <p>MS Office, Data Visualization</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-brain"></i>
+                <h3>Soft Skills</h3>
+                <p>Problem Solving, Team-oriented, Patient, Creative</p>
+            </div>
+        </div>
+        <div class="languages">
+            <h3>Languages</h3>
+            <div class="language-items">
+                <div class="language-item">
+                    <span class="language-name">Dutch</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
